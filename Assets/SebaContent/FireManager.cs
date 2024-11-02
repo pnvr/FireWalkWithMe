@@ -7,6 +7,8 @@ public class FireManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject fireObject;
 
+    [SerializeField] private LayerMask layerMask;
+
     //
     [SerializeField] private Vector3 UpDirection = new Vector3(0f, 1f, 0f);
     [SerializeField] private int SpawnAmount = 50;
@@ -24,11 +26,9 @@ public class FireManager : MonoBehaviour
     private void Start()
     {
         previousPlayerPosition = player.transform.position;
-
         SpawnChunk();
     }
 
-    
     private void Update()
     {
         timer += Time.deltaTime;
@@ -45,6 +45,7 @@ public class FireManager : MonoBehaviour
         for (int i = 0; i < SpawnAmount; i++)
         {
             GameObject temp = Instantiate<GameObject>(fireObject);
+            temp.transform.parent = this.transform;
             firePool.Add(temp);
         }
     }
@@ -68,10 +69,17 @@ public class FireManager : MonoBehaviour
             return;
         }
 
+        previousPlayerPosition = player.transform.position;
+
         GameObject fireObject = firePool[amountInUse];
         fireObject.transform.position = player.transform.position;
         fireObject.GetComponent<Fire>()._Start();
         amountInUse++;
+
+        if (amountInUse >= firePool.Count)
+        {
+            SpawnChunk();
+        }
     }
 
     private bool CanPlaceFire()
@@ -81,10 +89,11 @@ public class FireManager : MonoBehaviour
             return (false);
         }
 
-        Collider[] objects = Physics.OverlapBox(transform.position, OverlapHalfSize);
+        Collider[] objects = Physics.OverlapBox(player.transform.position, OverlapHalfSize, player.transform.rotation, layerMask);
         foreach (Collider col in objects)
         {
-            Fire fire = col.GetComponent<Fire>();
+            Fire fire = col.GetComponentInParent<Fire>();
+            print(fire);
             if (fire)
             {
                 return (false);
