@@ -6,35 +6,48 @@ public class Fire : MonoBehaviour
     [SerializeField] private GameObject visual;
     
     private float timer = 0f;
-    private bool active = false;
+    private bool fireActive = false;
+    private bool prefabActive = false;
 
     public void Reset()
     {
         visual.SetActive(false);
         timer = igniteTime;
-        active = false;
+        fireActive = false;
+        prefabActive = false;
+    }
+
+    public void Start()
+    {
+        Reset();
     }
 
     public void _Start()
     {
-        visual.SetActive(true);
+        prefabActive = true;
     }
 
     private void Update()
     {
+        if (!prefabActive)
+        {
+            return;
+        }
+
         timer -= Time.deltaTime;
 
-        if (active)
+        if (fireActive)
             return;
 
         if (timer <= 0)
         {
-            active = true;
+            fireActive = true;
+            visual.SetActive(true);
         }
     }
 
     public bool OnFire()
     {
-        return (active);
+        return (fireActive);
     }
 }

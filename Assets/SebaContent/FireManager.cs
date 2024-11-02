@@ -21,7 +21,7 @@ public class FireManager : MonoBehaviour
     private float timer = 0f;
     private Vector3 previousPlayerPosition = Vector3.zero;
     private List<GameObject> firePool = new List<GameObject>();
-    [SerializeField] private int amountInUse = 0;
+    private int amountInUse = 0;
 
     private void Start()
     {
@@ -45,6 +45,7 @@ public class FireManager : MonoBehaviour
         for (int i = 0; i < SpawnAmount; i++)
         {
             GameObject temp = Instantiate<GameObject>(fireObject);
+            temp.transform.parent = this.transform;
             firePool.Add(temp);
         }
     }
