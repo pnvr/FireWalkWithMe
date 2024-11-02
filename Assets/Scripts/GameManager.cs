@@ -6,16 +6,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     private int _extinguisher;
-    private int _key;
+    private int _key = 1;
 
     private void Awake()
     {
-        if (Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
+      //tsekkaa onko ainoa
+      
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
