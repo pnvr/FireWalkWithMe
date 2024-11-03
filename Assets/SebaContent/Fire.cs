@@ -4,7 +4,8 @@ public class Fire : MonoBehaviour
 {
     [SerializeField] private float igniteTime = 2f;
     [SerializeField] private GameObject visual;
-    
+    [SerializeField] private string playerTag;
+
     private float timer = 0f;
     private bool fireActive = false;
     private bool prefabActive = false;
@@ -49,5 +50,10 @@ public class Fire : MonoBehaviour
     public bool OnFire()
     {
         return (fireActive);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+       
     }
 }
