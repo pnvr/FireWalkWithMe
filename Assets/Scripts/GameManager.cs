@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     
     
     private int _extinguisher;
-    private int _key = 1;
+    private int _key = 3;
 
     private void Awake()
     {

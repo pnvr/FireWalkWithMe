@@ -2,19 +2,16 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    MapManager map;
     bool IsThereAKey()
     {
         return GameManager.Instance.CheckKey();
     }
 
-    bool IsKeyNear()
-    {
-        return true;
-    }
 
     public void OpenDoor()
     {
-        if ( IsThereAKey() && IsKeyNear())
+        if ( IsThereAKey())
         {
             GameManager.Instance.UseKey();
             Debug.Log("Destroyed door");
@@ -24,5 +21,12 @@ public class Door : MonoBehaviour
         Debug.Log("No destroy door");
 
     }
- 
+
+    void Start()
+    {
+       map = FindAnyObjectByType<MapManager>();
+       var pos = map.WorldToMapCoords(transform.position);
+       map.data [ pos.x ] [ pos.y ] = new MapNode(NodeType.Door, gameObject);
+       
+    }
 }

@@ -4,64 +4,100 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //GameObject agent;
-    public bool canIMove;
-
+    MapManager map;
+    Vector2Int pos;
     void Start()
     {
-      
-       // agent = GameObject.Find("Cube");
+        map = FindAnyObjectByType<MapManager>();
+        pos = map.WorldToMapCoords(transform.position);
+
     }
 
     void Update()
     {
 
-        if ( Input.GetKeyDown(KeyCode.UpArrow) && MayIMove() )
+        var tryMovePos = pos;
+        if ( Input.GetKeyDown(KeyCode.UpArrow) )
         {
-            transform.position = transform.position + Vector3.forward;
-            // liikuta yksi yksikkö ylöspäin
+            tryMovePos += Vector2Int.up;
+        }
+        if ( Input.GetKeyDown(KeyCode.DownArrow) )
+        {
+            tryMovePos += Vector2Int.down;
+        }
+        if ( Input.GetKeyDown(KeyCode.LeftArrow) )
+        {
+            tryMovePos += Vector2Int.left;
+        }
+        if ( Input.GetKeyDown(KeyCode.RightArrow) )
+        {
+            tryMovePos += Vector2Int.right;
+        }
+
+        if ( tryMovePos != pos )
+        {
+            var node = map.data [ tryMovePos.x ] [ tryMovePos.y ];
+            if ( node.type != NodeType.Wall )
+            {
+                pos = tryMovePos;
+            }
+
+            if ( node.type == NodeType.Door )
+            {
+                Door door = node.obj.GetComponent<Door>();
+                door.OpenDoor();
+            }
 
         }
-        if ( Input.GetKeyDown(KeyCode.DownArrow) && MayIMove())
-        {
-            transform.position = transform.position + Vector3.back;
-        }
-        if ( Input.GetKeyDown(KeyCode.LeftArrow) && MayIMove())
-        {
-            transform.position = transform.position + Vector3.left;
-        }
-        if ( Input.GetKeyDown(KeyCode.RightArrow) && MayIMove() )
-        {
-            transform.position = transform.position + Vector3.right;
-        }
-        //Sensor sensor = agent.GetComponent<Sensor>();
-        //Mover instantMover = agent.GetComponent<Mover>();
 
-        //if ( Input.GetKey(KeyCode.UpArrow) && !sensor.CheckForwardLocal() )
+        transform.position = map.MapToWorldCoords(pos);
+
+
+
+
+
+
+
+
+        //if ( Input.GetKeyDown(KeyCode.UpArrow) )
         //{
-        //    instantMover.Move();
+        //    var node = map.data [ pos.x ] [ pos.y + 1 ];
+        //    if ( node.type != NodeType.Wall )
+        //    {
+        //        pos.y += 1;
+        //    }
 
         //}
-
-        //if ( Input.GetKeyDown(KeyCode.LeftArrow) && !sensor.CheckLeftLocal() )
+        //if ( Input.GetKeyDown(KeyCode.DownArrow) )
         //{
-        //    instantMover.TurnLeft();
-
+        //    var node = map.data [ pos.x ] [ pos.y - 1 ];
+        //    if ( node.type != NodeType.Wall )
+        //    {
+        //        pos.y -= 1;
+        //    }
         //}
-        //if ( Input.GetKeyDown(KeyCode.RightArrow) && !sensor.CheckRightLocal() )
+        //if ( Input.GetKeyDown(KeyCode.LeftArrow) )
         //{
-        //    instantMover.TurnRight();
+        //    var node = map.data [ pos.x - 1 ] [ pos.y ];
+        //    if ( node.type != NodeType.Wall )
+        //    {
+        //        pos.x -= 1;
+        //    }
         //}
+        //if ( Input.GetKeyDown(KeyCode.RightArrow) )
+        //{
+        //    var node = map.data [ pos.x + 1 ] [ pos.y ];
+        //    if ( node.type != NodeType.Wall )
+        //    {
+        //        pos.x += 1;
+        //    }
+        //}
+
+
     }
 
-    bool MayIMove()
-    {
-        //tarkistaa saako kävellä
-        return canIMove;
-    }
 
-
-    }
+}
 
 
 
