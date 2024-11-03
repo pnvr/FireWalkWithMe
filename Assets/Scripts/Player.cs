@@ -6,11 +6,16 @@ public class Player : MonoBehaviour
 {
     MapManager map;
     Vector2Int pos;
+    Animator animator;
+
+    [SerializeField] AudioSource stepAudioSource;
+    [SerializeField] AudioSource doorOpenAudioSource;
+
     void Start()
     {
         map = FindAnyObjectByType<MapManager>();
         pos = map.WorldToMapCoords(transform.position);
-
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -20,18 +25,22 @@ public class Player : MonoBehaviour
         if ( Input.GetKeyDown(KeyCode.UpArrow) )
         {
             tryMovePos += Vector2Int.up;
+            animator.Play("Back Walking");
         }
         if ( Input.GetKeyDown(KeyCode.DownArrow) )
         {
             tryMovePos += Vector2Int.down;
+            animator.Play("Forward Walking");
         }
         if ( Input.GetKeyDown(KeyCode.LeftArrow) )
         {
             tryMovePos += Vector2Int.left;
+            animator.Play("Left Walking");
         }
         if ( Input.GetKeyDown(KeyCode.RightArrow) )
         {
             tryMovePos += Vector2Int.right;
+            animator.Play("Right Walking");
         }
 
         if ( tryMovePos != pos )
@@ -40,12 +49,16 @@ public class Player : MonoBehaviour
             if ( node.type != NodeType.Wall )
             {
                 pos = tryMovePos;
+
+                stepAudioSource.Play();
             }
 
             if ( node.type == NodeType.Door )
             {
                 Door door = node.obj.GetComponent<Door>();
                 door.OpenDoor();
+
+                doorOpenAudioSource.Play();
             }
 
         }

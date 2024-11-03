@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   igniteTime: 2
-  visual: {fileID: 8926264543676813678}
-  playerTag: 
+  fireVisual: {fileID: 8926264543676813678}
 --- !u!1 &8926264543676813678
 GameObject:
   m_ObjectHideFlags: 0
