@@ -94,7 +94,7 @@ public class FireManager : MonoBehaviour
         foreach (Collider col in objects)
         {
             Fire fire = col.GetComponentInParent<Fire>();
-            print(fire);
+            
             if (fire)
             {
                 return (false);

@@ -11,8 +11,4 @@ public class Wall : MonoBehaviour
         map.data [ pos.x ] [ pos.y ] = new MapNode(NodeType.Wall, gameObject);
     }
 
-    void Update()
-    {
-        
-    }
 }

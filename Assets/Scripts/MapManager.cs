@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum NodeType{Empty, Wall, Fire, Door}
+public enum NodeType{Empty, Wall, Fire, Door, Extinguisher, Key}
 
 [System.Serializable]
 public struct MapNode

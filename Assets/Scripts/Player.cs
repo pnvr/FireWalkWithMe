@@ -60,6 +60,21 @@ public class Player : MonoBehaviour
 
                 doorOpenAudioSource.Play();
             }
+            if ( node.type == NodeType.Key )
+            {
+                Key key = node.obj.GetComponent<Key>();
+                key.PickupKey();
+                //keyOpenAudioSource.Play();
+            }
+
+            if ( node.type == NodeType.Extinguisher )
+            {
+                Extinguisher extinguisher = node.obj.GetComponent<Extinguisher>();
+                extinguisher.PickupExtinguisher();
+
+                //doorOpenAudioSource.Play();
+            }
+
 
         }
 
