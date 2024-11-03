@@ -6,6 +6,7 @@ public class FireManager : MonoBehaviour
     //Objects
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject fireObject;
+    [SerializeField] private MapManager mapManager;
 
     [SerializeField] private LayerMask layerMask;
 
@@ -16,7 +17,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private Vector3 OverlapHalfSize = new Vector3(0.5f, 0.5f, 0.5f);
 
     //
-    [SerializeField] private float tick = 0.25f;
+    [SerializeField] private float tick = 0.1f;
 
     private float timer = 0f;
     private Vector3 previousPlayerPosition = Vector3.zero;
@@ -47,6 +48,7 @@ public class FireManager : MonoBehaviour
             GameObject temp = Instantiate<GameObject>(fireObject);
             temp.transform.parent = this.transform;
             firePool.Add(temp);
+            temp.GetComponent<Fire>().Setup(mapManager);
         }
     }
 
