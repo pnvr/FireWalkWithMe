@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
     private Transform _target;
-    private float _height = 10f;
+    private float _height = 1f;
     private float _speed = 5f;
 
     private void Start()
