@@ -8,6 +8,8 @@ public class Fire : MonoBehaviour
     private float timer = 0f;
     private bool fireActive = false;
     private bool prefabActive = false;
+    private MapManager mapManager;
+    private MapNode previousNodeData = new MapNode();
 
     public void Reset()
     {
@@ -20,6 +22,11 @@ public class Fire : MonoBehaviour
     private void Start()
     {
         Reset();
+    }
+
+    public void Setup(MapManager mapManager)
+    {
+        this.mapManager = mapManager;
     }
 
     public void _Start()
@@ -45,11 +52,20 @@ public class Fire : MonoBehaviour
         {
             fireActive = true;
             fireVisual.SetActive(true);
+            SetFireOn();
         }
     }
 
-    public bool OnFire()
+    private void SetFireOn()
     {
-        return (fireActive);
+        if (previousNodeData.obj)
+        {
+            var previousPos = mapManager.WorldToMapCoords(previousNodeData.obj.transform.position);
+            mapManager.data[previousPos.x][previousPos.y] = new MapNode(NodeType.Wall, previousNodeData.obj);
+        }
+
+        var currentPos = mapManager.WorldToMapCoords(transform.position);
+        previousNodeData = mapManager.data[currentPos.x][currentPos.y];
+        mapManager.data[currentPos.x][currentPos.y] = new MapNode(NodeType.Fire, gameObject);
     }
 }
