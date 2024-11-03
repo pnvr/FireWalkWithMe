@@ -29,13 +29,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var g in extinquisherFull)
-        {
-            g.SetActive(false);
-        }
+        if(extinquisherFull != null)
+            foreach (var g in extinquisherFull)
+            {
+                g.SetActive(false);
+            }
         
-        controls.SetActive(false);
-        credits.SetActive(false);
+        if(controls != null)
+            controls.SetActive(false);
+        
+        if (credits != null)
+            credits.SetActive(false);
     }
 
     public void AddExtinguisher()
