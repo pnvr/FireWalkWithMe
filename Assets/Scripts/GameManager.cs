@@ -44,11 +44,15 @@ public class GameManager : MonoBehaviour
 
     public void AddExtinguisher()
     {
-        if(_extinguisher >= extinquisherFull.Count)
-            return;
-        
-        _extinguisher++;
-        SetExtinquisherUI();
+
+
+        for ( int i = 0; i < extinquisherFull.Count; i++ )
+        {
+            if ( _extinguisher >= extinquisherFull.Count )
+                return;
+            _extinguisher++;
+            SetExtinquisherUI();
+        }
     }
 
     public bool CheckExtinguisher()
@@ -83,7 +87,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
+    public void Death()
+    {
+        Debug.Log("Death");
+    }
     public void QuitGame()
     {
         Application.Quit();

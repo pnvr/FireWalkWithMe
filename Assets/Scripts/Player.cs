@@ -71,9 +71,21 @@ public class Player : MonoBehaviour
             if ( node.type == NodeType.Extinguisher )
             {
                 Extinguisher extinguisher = node.obj.GetComponent<Extinguisher>();
+
                 extinguisher.PickupExtinguisher();
 
                 //doorOpenAudioSource.Play();
+            }
+
+            if ( node.type == NodeType.Fire )
+            { if ( GameManager.Instance.CheckExtinguisher() )
+                {
+                    GameManager.Instance.UseExtinguisher();
+                    Debug.Log("Sammutinta käytetty");
+                    node.obj.GetComponentInParent<Fire>().Reset();
+                }
+                else
+                    GameManager.Instance.Death();
             }
             if ( node.type != NodeType.Wall )
             {
