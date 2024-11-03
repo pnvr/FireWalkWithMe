@@ -10,7 +10,7 @@ public class FireManager : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     //
-    [SerializeField] private Vector3 UpDirection = new Vector3(0f, 1f, 0f);
+    //[SerializeField] private Vector3 UpDirection = new Vector3(0f, 1f, 0f);
     [SerializeField] private int SpawnAmount = 50;
 
     [SerializeField] private Vector3 OverlapHalfSize = new Vector3(0.5f, 0.5f, 0.5f);
@@ -60,6 +60,7 @@ public class FireManager : MonoBehaviour
                 fire.Reset();
             }
         }
+        amountInUse = 0;
     }
 
     private void TryPlaceFire()

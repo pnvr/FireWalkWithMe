@@ -3,21 +3,21 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     [SerializeField] private float igniteTime = 2f;
-    [SerializeField] private GameObject visual;
-    
+    [SerializeField] private GameObject fireVisual;
+
     private float timer = 0f;
     private bool fireActive = false;
     private bool prefabActive = false;
 
     public void Reset()
     {
-        visual.SetActive(false);
+        fireVisual.SetActive(false);
         timer = igniteTime;
         fireActive = false;
         prefabActive = false;
     }
 
-    public void Start()
+    private void Start()
     {
         Reset();
     }
@@ -37,12 +37,14 @@ public class Fire : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (fireActive)
+        {
             return;
+        }
 
         if (timer <= 0)
         {
             fireActive = true;
-            visual.SetActive(true);
+            fireVisual.SetActive(true);
         }
     }
 

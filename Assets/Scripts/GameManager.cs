@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> extinquisherEmpty;
     public List<GameObject> extinquisherFull;
-    
+
+    public GameObject controls;
+    public GameObject credits;
     
     private int _extinguisher;
     private int _key = 3;
@@ -26,10 +29,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var g in extinquisherFull)
-        {
-            g.SetActive(false);
-        }
+        if(extinquisherFull != null)
+            foreach (var g in extinquisherFull)
+            {
+                g.SetActive(false);
+            }
+        
+        if(controls != null)
+            controls.SetActive(false);
+        
+        if (credits != null)
+            credits.SetActive(false);
     }
 
     public void AddExtinguisher()
@@ -69,7 +79,15 @@ public class GameManager : MonoBehaviour
     {
         _key--;
     }
+    public void StartScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 #region UI
 
     void SetExtinquisherUI()
@@ -85,5 +103,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Controls(bool show)
+    {
+        controls.SetActive(show);
+    }
+
+    public void Credits(bool show)
+    {
+        credits.SetActive(show);
+    }
+    
 #endregion
 }
