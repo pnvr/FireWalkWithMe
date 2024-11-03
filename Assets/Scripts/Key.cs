@@ -12,7 +12,9 @@ public class Key : MonoBehaviour
     public void PickupKey()
     {
         GameManager.Instance.AddKey();
-        Destroy(gameObject);
+        var pos = map.WorldToMapCoords(transform.position);
+        map.data [ pos.x ] [ pos.y ] = new MapNode(NodeType.Empty, gameObject);
+        gameObject.SetActive(false);
         Debug.Log("Avain poimittu");
     }
 

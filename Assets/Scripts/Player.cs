@@ -46,19 +46,20 @@ public class Player : MonoBehaviour
         if ( tryMovePos != pos )
         {
             var node = map.data [ tryMovePos.x ] [ tryMovePos.y ];
-            if ( node.type != NodeType.Wall )
-            {
-                pos = tryMovePos;
 
-                stepAudioSource.Play();
-            }
 
             if ( node.type == NodeType.Door )
             {
                 Door door = node.obj.GetComponent<Door>();
+                if ( !GameManager.Instance.CheckKey() )
+                {
+                    tryMovePos = pos;
+                    
+                    return;
+                }
                 door.OpenDoor();
-
                 doorOpenAudioSource.Play();
+                
             }
             if ( node.type == NodeType.Key )
             {
@@ -74,7 +75,12 @@ public class Player : MonoBehaviour
 
                 //doorOpenAudioSource.Play();
             }
+            if ( node.type != NodeType.Wall )
+            {
+                pos = tryMovePos;
 
+                stepAudioSource.Play();
+            }
 
         }
 

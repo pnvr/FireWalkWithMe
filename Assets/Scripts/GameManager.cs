@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject credits;
     
     private int _extinguisher;
-    private int _key = 3;
+    private int _key;
 
     private void Awake()
     {

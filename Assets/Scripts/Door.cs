@@ -11,14 +11,14 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
-        if ( IsThereAKey())
-        {
+        
+        
             GameManager.Instance.UseKey();
             Debug.Log("Destroyed door");
-            return;
-            //Destroy(gameObject);
-        }
-        Debug.Log("No destroy door");
+      
+            Destroy(gameObject);
+
+        
 
     }
 
