@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] AudioSource stepAudioSource;
     [SerializeField] AudioSource doorOpenAudioSource;
     [SerializeField] AudioSource keyOpenAudioSource;
+    [SerializeField] AudioSource extinguisherAudioSource;
   
 
     void Start()
@@ -83,6 +84,8 @@ public class Player : MonoBehaviour
             { if ( GameManager.Instance.CheckExtinguisher() )
                 {
                     GameManager.Instance.UseExtinguisher();
+                    extinguisherAudioSource.Play();
+
                     Debug.Log("Sammutinta käytetty");
                     node.obj.GetComponentInParent<Fire>().Reset();
                 }
