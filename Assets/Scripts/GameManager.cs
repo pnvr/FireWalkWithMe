@@ -71,8 +71,6 @@ public class GameManager : MonoBehaviour
 
     public void UseLives()
     {
-        if ( _lives < 1 )
-            return;
         _lives--;
         SetLivesUI();
     }
@@ -95,7 +93,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    void Death()
+    public void Death()
     {
         if ( _lives <= 0 )
         {
