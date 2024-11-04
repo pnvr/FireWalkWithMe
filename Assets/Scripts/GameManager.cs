@@ -8,7 +8,12 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> livesFull;
     public List<GameObject> extinquisherFull;
-    
+
+    public GameObject controls;
+    public GameObject credits;
+
+    public AudioSource [ ] deathAudioSource = new AudioSource [ 3 ];
+
     private int _extinguisher;
     private int _key;
     private int _lives;
@@ -33,6 +38,12 @@ public class GameManager : MonoBehaviour
             {
                 g.SetActive(false);
             }
+        
+        if(controls != null)
+            controls.SetActive(false);
+        
+        if (credits != null)
+            credits.SetActive(false);
     }
 
     public void AddExtinguisher()
@@ -61,9 +72,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void UseLives()
-    {
+    { 
         _lives--;
-        SetLivesUI();
+        if ( _lives < 1 )
+        {
+            Death();
+        }
+            SetLivesUI();
     }
 
     public void AddKey()
@@ -80,13 +95,15 @@ public class GameManager : MonoBehaviour
     {
         _key--;
     }
-    
+    public void StartScene()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void Death()
     {
-        if ( _lives <= 0 )
-        {
-        // Game Over
-        }
+        int rand = Random.Range(0, 3);
+        deathAudioSource [ rand ].Play();
+
         Debug.Log("Death");
     }
     public void QuitGame()
@@ -120,5 +137,16 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void Controls(bool show)
+    {
+        controls.SetActive(show);
+    }
+
+    public void Credits(bool show)
+    {
+        credits.SetActive(show);
+    }
+    
 #endregion
 }
