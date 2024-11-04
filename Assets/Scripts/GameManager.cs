@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> livesFull;
     public List<GameObject> extinquisherFull;
-
-    public GameObject controls;
-    public GameObject credits;
     
     private int _extinguisher;
     private int _key;
@@ -36,12 +33,6 @@ public class GameManager : MonoBehaviour
             {
                 g.SetActive(false);
             }
-        
-        if(controls != null)
-            controls.SetActive(false);
-        
-        if (credits != null)
-            credits.SetActive(false);
     }
 
     public void AddExtinguisher()
@@ -89,10 +80,7 @@ public class GameManager : MonoBehaviour
     {
         _key--;
     }
-    public void StartScene()
-    {
-        SceneManager.LoadScene(1);
-    }
+    
     public void Death()
     {
         if ( _lives <= 0 )
@@ -132,16 +120,5 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    public void Controls(bool show)
-    {
-        controls.SetActive(show);
-    }
-
-    public void Credits(bool show)
-    {
-        credits.SetActive(show);
-    }
-    
 #endregion
 }
