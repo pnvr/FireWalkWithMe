@@ -5,8 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cfdf5a9-70cc-4722-90a4-4020ce19c0a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animation/Hugefire.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animation/Hugefire.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animation/Hugefire.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animation/Hugefire.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Andrew words .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Andrew words .png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Game over back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Game over back.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Game over empty .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Game over empty .png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Hugefire3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Key.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka words.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka words.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FireExPrefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FireExPrefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 1.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 4.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 4.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 6.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SebaContent/Audio/DeathSound 6.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FireWalkWithMe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FireWalkWithMe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Door.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Door.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Fire extinguisher .png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Fire extinguisher .png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Heart.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Heart.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Tuli.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Tuli.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jaana.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jaana.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +51,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/aripunavuori/Unity Projects/FireWalkWithMe/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/aripunavuori/Unity Projects/FireWalkWithMe/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShowTime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UITester.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -28,18 +64,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.0.25f1/Unity.app/Contents/MacOS/Unity" />
@@ -97,6 +133,7 @@
       <workItem from="1730643899411" duration="1387000" />
       <workItem from="1730709558873" duration="630000" />
       <workItem from="1730710288880" duration="363000" />
+      <workItem from="1730713621211" duration="1202000" />
     </task>
     <servers />
   </component>
