@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fire walk with me
+  m_Name: Burning
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: d7a2a4415473025438ca7f5961964544, type: 3}
-    - time: 0.23333333
-      value: {fileID: 21300000, guid: c403c43ea29f29449ac9de8f4937ae98, type: 3}
-    - time: 0.46666667
-      value: {fileID: 21300000, guid: 0f382f45bad73fd4386d9996a97e6188, type: 3}
-    - time: 0.7
-      value: {fileID: 21300000, guid: d7a2a4415473025438ca7f5961964544, type: 3}
+      value: {fileID: 21300000, guid: 4542f64efbe78c042928047dc9d8f620, type: 3}
+    - time: 0.016666668
+      value: {fileID: 21300000, guid: 43152e21586366847ae598091c7eac3f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: d7a2a4415473025438ca7f5961964544, type: 3}
-    - {fileID: 21300000, guid: c403c43ea29f29449ac9de8f4937ae98, type: 3}
-    - {fileID: 21300000, guid: 0f382f45bad73fd4386d9996a97e6188, type: 3}
-    - {fileID: 21300000, guid: d7a2a4415473025438ca7f5961964544, type: 3}
+    - {fileID: 21300000, guid: 4542f64efbe78c042928047dc9d8f620, type: 3}
+    - {fileID: 21300000, guid: 43152e21586366847ae598091c7eac3f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.71666664
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
