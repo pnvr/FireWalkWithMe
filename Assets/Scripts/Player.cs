@@ -85,7 +85,8 @@ public class Player : MonoBehaviour
                     node.obj.GetComponentInParent<Fire>().Reset();
                 }
                 else
-                    GameManager.Instance.Death();
+                    Debug.Log("Kuolo korjaa");
+                    //GameManager.Instance.Death();
             }
             if ( node.type != NodeType.Wall )
             {
