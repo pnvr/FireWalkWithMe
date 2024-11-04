@@ -9,9 +9,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> livesFull;
     public List<GameObject> extinquisherFull;
 
-    public GameObject controls;
-    public GameObject credits;
-
     public AudioSource [ ] deathAudioSource = new AudioSource [ 3 ];
 
     private int _extinguisher;
@@ -33,17 +30,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if(extinquisherFull != null)
+        _lives = livesFull.Count;
+
+        if (livesFull != null)
+            foreach (var g in livesFull) {
+                g.SetActive(false);
+            }
+
+        SetLivesUI();
+
+        if (extinquisherFull != null)
             foreach (var g in extinquisherFull)
             {
                 g.SetActive(false);
             }
-        
-        if(controls != null)
-            controls.SetActive(false);
-        
-        if (credits != null)
-            credits.SetActive(false);
     }
 
     public void AddExtinguisher()
@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
     {
         for ( int i = 0; i < livesFull.Count; i++ )
         {
+            Debug.Log(_lives);
             if ( _lives > i )
                 livesFull [ i ].SetActive(true);
             else
@@ -138,15 +139,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Controls(bool show)
-    {
-        controls.SetActive(show);
-    }
-
-    public void Credits(bool show)
-    {
-        credits.SetActive(show);
-    }
     
 #endregion
 }
