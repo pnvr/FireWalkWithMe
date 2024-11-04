@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public List<GameObject> extinquisherEmpty;
+    public List<GameObject> livesFull;
     public List<GameObject> extinquisherFull;
 
     public GameObject controls;
@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     
     private int _extinguisher;
     private int _key;
+    private int _lives;
+  
 
     private void Awake()
     {
@@ -44,8 +46,6 @@ public class GameManager : MonoBehaviour
 
     public void AddExtinguisher()
     {
-
-
         for ( int i = 0; i < extinquisherFull.Count; i++ )
         {
             if ( _extinguisher >= extinquisherFull.Count )
@@ -68,7 +68,13 @@ public class GameManager : MonoBehaviour
         _extinguisher--;
         SetExtinquisherUI();
     }
-    
+
+    public void UseLives()
+    {
+        _lives--;
+        SetLivesUI();
+    }
+
     public void AddKey()
     {
         _key++;
@@ -89,6 +95,10 @@ public class GameManager : MonoBehaviour
     }
     public void Death()
     {
+        if ( _lives <= 0 )
+        {
+        // Game Over
+        }
         Debug.Log("Death");
     }
     public void QuitGame()
@@ -106,6 +116,19 @@ public class GameManager : MonoBehaviour
             else
             {
                 extinquisherFull[i].SetActive(false);
+            }
+        }
+    }
+
+    void SetLivesUI()
+    {
+        for ( int i = 0; i < livesFull.Count; i++ )
+        {
+            if ( _lives > i )
+                livesFull [ i ].SetActive(true);
+            else
+            {
+                livesFull [ i ].SetActive(false);
             }
         }
     }

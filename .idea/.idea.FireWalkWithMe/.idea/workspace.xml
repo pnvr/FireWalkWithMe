@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cfdf5a9-70cc-4722-90a4-4020ce19c0a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AriDevScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AriDevScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FireWalkWithMe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FireWalkWithMe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/PixelSprites/Yka.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShowTime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UITester.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -92,7 +94,9 @@
       <workItem from="1730629874701" duration="566000" />
       <workItem from="1730630463144" duration="272000" />
       <workItem from="1730635006752" duration="1745000" />
-      <workItem from="1730643899411" duration="320000" />
+      <workItem from="1730643899411" duration="1387000" />
+      <workItem from="1730709558873" duration="630000" />
+      <workItem from="1730710288880" duration="363000" />
     </task>
     <servers />
   </component>
