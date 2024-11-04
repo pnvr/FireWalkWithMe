@@ -15,8 +15,8 @@ public class Door : MonoBehaviour
         
             GameManager.Instance.UseKey();
             Debug.Log("Destroyed door");
-            GetComponent<ShowTime>().Show();
-            //Destroy(gameObject);
+            
+            Destroy(gameObject);
 
         
 

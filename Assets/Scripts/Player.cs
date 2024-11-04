@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] AudioSource doorOpenAudioSource;
     [SerializeField] AudioSource keyOpenAudioSource;
     [SerializeField] AudioSource extinguisherAudioSource;
-  
+
+    public AudioSource[] pickFireExAudioSource = new AudioSource[3];
+
 
     void Start()
     {
@@ -77,7 +79,8 @@ public class Player : MonoBehaviour
 
                 extinguisher.PickupExtinguisher();
 
-                doorOpenAudioSource.Play();
+                int rand = Random.Range(0, 3);
+                pickFireExAudioSource[rand].Play();
             }
 
             if ( node.type == NodeType.Fire )

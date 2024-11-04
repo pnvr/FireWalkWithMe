@@ -10,13 +10,21 @@ public class GameManager : MonoBehaviour
     public List<GameObject> extinquisherFull;
 
     public GameObject gameOver;
+    public GameObject winGame;
 
     public AudioSource [ ] deathAudioSource = new AudioSource [ 3 ];
 
     private int _extinguisher;
     private int _key;
     private int _lives;
-  
+
+
+    private void Update() {
+        if (Input.GetKeyUp(KeyCode.R)) {
+            SceneManager.LoadScene(2);
+            Time.timeScale = 1.0f;
+        }
+    }
 
     private void Awake()
     {
@@ -82,7 +90,7 @@ public class GameManager : MonoBehaviour
         
         if ( _lives < 1 )
         {
-            Death();
+            //Death();
         }
             SetLivesUI();
     }
@@ -105,12 +113,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void Death()
-    {
-        gameOver.SetActive(true);
-
-        Debug.Log("Death");
-    }
+    //public void Death(bool blaa)
+    //{
+        
+    //    if (blaa )
+    //    näytä  gameover kuva
+    //    else win
+    //    Debug.Log("Death");
+    //}
     public void QuitGame()
     {
         Application.Quit();
