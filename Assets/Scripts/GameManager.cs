@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> livesFull;
     public List<GameObject> extinquisherFull;
 
+    public GameObject gameOver;
+
     public AudioSource [ ] deathAudioSource = new AudioSource [ 3 ];
 
     private int _extinguisher;
@@ -74,6 +76,10 @@ public class GameManager : MonoBehaviour
     public void UseLives()
     { 
         _lives--;
+
+        int rand = Random.Range(0, 3);
+        deathAudioSource[rand].Play();
+        
         if ( _lives < 1 )
         {
             Death();
@@ -101,14 +107,19 @@ public class GameManager : MonoBehaviour
     }
     public void Death()
     {
-        int rand = Random.Range(0, 3);
-        deathAudioSource [ rand ].Play();
+        gameOver.SetActive(true);
 
         Debug.Log("Death");
     }
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Retry() {
+
+        SceneManager.LoadScene(1);
+
     }
 #region UI
 

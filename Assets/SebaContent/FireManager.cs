@@ -87,6 +87,9 @@ public class FireManager : MonoBehaviour
 
     private bool CanPlaceFire()
     {
+        if(player == null)
+            return false;
+
         if (previousPlayerPosition == player.transform.position)
         {
             return (false);
