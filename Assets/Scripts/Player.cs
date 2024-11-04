@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] AudioSource stepAudioSource;
     [SerializeField] AudioSource doorOpenAudioSource;
+    [SerializeField] AudioSource keyOpenAudioSource;
+  
 
     void Start()
     {
@@ -65,7 +67,7 @@ public class Player : MonoBehaviour
             {
                 Key key = node.obj.GetComponent<Key>();
                 key.PickupKey();
-                //keyOpenAudioSource.Play();
+                keyOpenAudioSource.Play();
             }
 
             if ( node.type == NodeType.Extinguisher )
@@ -74,7 +76,7 @@ public class Player : MonoBehaviour
 
                 extinguisher.PickupExtinguisher();
 
-                //doorOpenAudioSource.Play();
+                doorOpenAudioSource.Play();
             }
 
             if ( node.type == NodeType.Fire )

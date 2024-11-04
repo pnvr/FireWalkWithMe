@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject controls;
     public GameObject credits;
-    
+
+    public AudioSource [ ] deathAudioSource = new AudioSource [ 3 ];
+
     private int _extinguisher;
     private int _key;
     private int _lives;
@@ -70,9 +72,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void UseLives()
-    {
+    { 
         _lives--;
-        SetLivesUI();
+        if ( _lives < 1 )
+        {
+            Death();
+        }
+            SetLivesUI();
     }
 
     public void AddKey()
@@ -95,10 +101,9 @@ public class GameManager : MonoBehaviour
     }
     public void Death()
     {
-        if ( _lives <= 0 )
-        {
-        // Game Over
-        }
+        int rand = Random.Range(0, 3);
+        deathAudioSource [ rand ].Play();
+
         Debug.Log("Death");
     }
     public void QuitGame()
