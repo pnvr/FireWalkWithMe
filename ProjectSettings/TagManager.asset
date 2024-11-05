@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Fire
+  - Ovi Y
+  - Ovi A
+  - DoorY
+  - DoorA
   layers:
   - Default
   - TransparentFX

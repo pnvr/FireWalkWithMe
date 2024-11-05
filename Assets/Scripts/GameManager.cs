@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         
         if ( _lives < 1 )
         {
-            //Death();
+            Death();
         }
             SetLivesUI();
     }
@@ -105,14 +105,21 @@ public class GameManager : MonoBehaviour
         return _key > 0;
     }
     
-    public void UseKey()
-    {
-        _key--;
-    }
+    //public void UseKey()
+    //{
+    //    _key--;
+    //}
     public void StartScene()
     {
         SceneManager.LoadScene(1);
     }
+    
+    public void Death() {
+
+        Time.timeScale = 0;
+        Debug.Log("Death");
+    }
+
     //public void Death(bool blaa)
     //{
         

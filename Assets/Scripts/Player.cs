@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
                     
                     return;
                 }
+             if (door != null && door.CompareTag("DoorA") || door.CompareTag("DoorY")) 
                 door.OpenDoor();
                 doorOpenAudioSource.Play();
                 
