@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro.Examples;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,11 +22,32 @@ public class GameManager : MonoBehaviour
 
     private void Update() {
         if (Input.GetKeyUp(KeyCode.R)) {
+            ResetGame();
             SceneManager.LoadScene(2);
             Time.timeScale = 1.0f;
         }
+        if (Input.GetKeyUp(KeyCode.M)) {
+            SceneManager.LoadScene(0);
+        }
     }
 
+    public void ResetGame() {
+        _lives = livesFull.Count;
+        _extinguisher = 0;
+        _key = 0;
+
+        SetLivesUI();
+        SetExtinquisherUI();
+
+        var player = FindObjectOfType<Player>();
+        if (player != null) {
+            player.Restart();
+        }
+
+        //foreach (var extinguisher in FindObjectsOfType<Extinguisher>()) {
+        //    extinguisher.Reset();
+        //}
+    }
     private void Awake()
     {
         if (Instance != null)
@@ -113,11 +135,21 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    
+
     public void Death() {
 
+        var player = FindObjectOfType<Player>();
+        if (player != null) {
+            player.Die();
+        }
+
         Time.timeScale = 0;
-        Debug.Log("Death");
+
+        if (gameOver != null) {
+            gameOver.SetActive(true);
+        } else {
+            Debug.LogWarning("Game Over object is missing!");
+        }
     }
 
     //public void Death(bool blaa)
@@ -135,7 +167,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry() {
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
 
     }
 #region UI

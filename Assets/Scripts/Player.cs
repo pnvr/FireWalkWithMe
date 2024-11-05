@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public AudioSource[] pickFireExAudioSource = new AudioSource[3];
 
+    private bool isDead = false;
 
     void Start()
     {
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //if (isDead) {
+        //    return;
+        //}
 
         var tryMovePos = pos;
         if ( Input.GetKeyDown(KeyCode.UpArrow) )
@@ -154,7 +158,17 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Die() {
+        isDead = true;
+        animator.Play("Burning");
+        animator.SetBool("IsDead", true); //looppaa animaatiota
+    }
 
+    public void Restart() {
+        isDead = false;
+        animator.SetBool("IsDead", false);
+        transform.position = Vector3.zero;
+    }
 }
 
 
